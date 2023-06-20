@@ -18,17 +18,10 @@ const Experience = () => {
 
   const handlePanelChange = (panel: string) => {
     setPanel(panel);
-    switch (panel) {
-      case 'summary':
-        setCurrentConfig(summaryConfig);
-        break;
-      case 'storylinq':
-        setCurrentConfig(storylinqConfig);
-        break;
-      default:
-        setCurrentConfig(summaryConfig);
-        break;
-    }
+
+    if (panel === 'summary') setCurrentConfig(summaryConfig);
+    else if (panel === 'storylinq') setCurrentConfig(storylinqConfig);
+    else setCurrentConfig(summaryConfig);
   };
 
   return (
